@@ -1,5 +1,5 @@
 v0.`44` pwd
-2  ls
+333  ls
 git version
 git config -global user.name "zhuyun"
 git config -global user.email "781999207@qq.com"
@@ -12,3 +12,4 @@ git log
 git add .
 git commit -m "第二次提交"
 git commit -m "fix(111.txt):change content"
+ff
