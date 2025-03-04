@@ -1,0 +1,9 @@
+v0.1 pwd
+2  ls
+git version
+git config -global user.name "zhuyun"
+git config -global user.email "781999207@qq.com"
+git init 
+ls -Force
+git add 111.txt
+git add .
