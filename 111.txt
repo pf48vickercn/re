@@ -1,4 +1,4 @@
-v0.1 pwd
+v0.`1` pwd
 2  ls
 git version
 git config -global user.name "zhuyun"
@@ -7,3 +7,5 @@ git init
 ls -Force
 git add 111.txt
 git add .
+git commit #先按i,输入备注，然后esc退出编辑，最后:wq
+git log
