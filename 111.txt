@@ -11,3 +11,4 @@ git commit #先按i,输入备注，然后esc退出编辑，最后:wq
 git log
 git add .
 git commit -m "第二次提交"
+git commit -m "fix(111.txt):change content"
