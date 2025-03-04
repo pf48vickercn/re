@@ -12,4 +12,4 @@ git log
 git add .
 git commit -m "第二次提交"
 git commit -m "fix(111.txt):change content"
-ff
+git checkout head 111.txt
