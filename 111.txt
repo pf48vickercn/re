@@ -1,18 +1,18 @@
 v0.`44` pwd
 333  ls
-git version
-git config -global user.name "zhuyun"
-git config -global user.email "781999207@qq.com"
-git init 
-ls -Force
-git add 111.txt
+git version   查看版本
+git config -global user.name "zhuyun"  注册用户名
+git config -global user.email "781999207@qq.com"  注册邮箱
+git init  初始化
+ls -Force  查看文件夹下全部
+git add 111.txt  指定文件预提交状态
+git add .  所有文件预提交状态
+git commit  #先按i,输入备注，然后esc退出编辑，最后:wq
+git log   查看本版日志
 git add .
-git commit #先按i,输入备注，然后esc退出编辑，最后:wq
-git log
-git add .
-git commit -m "第二次提交"
-git commit -m "fix(111.txt):change content"
-git checkout head 111.txt
+git commit -m "第二次提交"    提交
+git commit -m "fix(111.txt):change content"     格式提交
+git checkout head 111.txt   取出最近一次上传版本更新
 
 
 …or create a new repository on the command line
@@ -20,24 +20,49 @@ echo "# re" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/pf48vickercn/re.git
-git push -u origin main
+git branch -M main      是用于强制重命名当前分支为 main 的 Git 命令
+git remote add origin https://github.com/pf48vickercn/re.git   用于将一个远程仓库的地址添加到本地仓库的配置中，并为其指定一个名称（在此例中为 origin）
+git push -u origin main  将本地分支 main 的代码推送到名为 origin 的远程仓库同名分支（即 origin/main）‌ -u：设置上游关联的关键参数，仅需在首次推送时使用‌
 
 …or push an existing repository from the command line
 git remote add origin https://github.com/pf48vickercn/re.git
 git branch -M main
 git push -u origin main
 
-git clone https://github.com/pf48vickercn/re01.git .
-git remote -v
-git remote add upstream https://github.com/midorg-com/re01.git
-git checkout -b kwc
+
+
+
+通俗解释 origin 和 upstream 的区别
+一、‌核心区别‌
+‌origin（你的个人仓库）‌
+
+你从 ‌别人仓库‌ Fork 出来的 ‌个人副本‌，相当于你在 GitHub 上“复制”了一个专属版本‌12。
+你对它有 ‌完全控制权‌：可以随意修改、提交、推送代码到自己的 origin 仓库‌13。
+默认操作对象：执行 git push 或 git pull 时，默认操作的远程仓库就是 origin‌23。
+‌upstream（原始主仓库）‌
+
+别人维护的 ‌原始仓库‌，比如开源项目的官方仓库，你 Fork 时“复制”的来源仓库‌12。
+你对它 ‌只有读权限‌：无法直接推送代码修改到 upstream，只能通过 Pull Request 贡献代码‌13。
+需手动关联：默认不会自动添加，需要通过 git remote add upstream [原仓库URL] 手动配置‌12。
+二、‌生活场景类比‌
+‌origin‌ 像你的 ‌个人笔记本‌：可以随意涂改、记录想法，随时保存自己的版本。
+‌upstream‌ 像 ‌图书馆的参考书‌：只能阅读最新内容，不能直接在上面写写画画，想提建议需要向管理员提交申请（类似 Pull Request）。
+
+
+
+
+
+git clone https://github.com/pf48vickercn/re01.git .  用于克隆一个远程仓库到本地指定目录。.：指定克隆到当前目录。
+git remote -v    显示本地仓库中所有已关联的远程仓库名称（如默认的 origin）及其对应的 URL 地址，包括 下载fetch（拉取）和 上传push（推送）操作的 URL‌
+git remote add upstream https://github.com/midorg-com/re01.git    执行这条命令后，你的本地仓库就会记住一个名为 upstream 的远程仓库，以及它的 URL 地址。这意味着你可以方便地从这个远程仓库拉取（git pull upstream <branch>）或合并（git merge upstream/<branch>）代码到你的本地仓库中。
+git checkout -b kwc  创建名为 kwc 的新分支，并立即切换到该分支‌‌
 git add .
 git commit -m "add(1721841005):zy"
 git push -u origin kwc
 
+
+
 如果冲突，需要更新最新的
-git fetch upstream
-git merge upstream/main
-git push
+git fetch upstream   # 从原始仓库同步最新代码到本地
+git merge upstream/main  # 从原始仓库同步最新代码到本地
+git push  # 修改后推送到自己的仓库
